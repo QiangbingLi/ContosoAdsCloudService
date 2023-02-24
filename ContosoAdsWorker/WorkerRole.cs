@@ -78,7 +78,8 @@ namespace ContosoAdsWorker
                 throw new Exception(String.Format("AdId {0} not found, can't create thumbnail", adId.ToString()));
             }
 
-            CloudBlockBlob inputBlob = this.imagesBlobContainer.GetBlockBlobReference(ad.ImageURL);
+            String imageURL = Path.GetFileName(ad.ImageURL); 
+            CloudBlockBlob inputBlob = this.imagesBlobContainer.GetBlockBlobReference(imageURL);
 
             string thumbnailName = Path.GetFileNameWithoutExtension(inputBlob.Name) + "thumb.jpg";
             CloudBlockBlob outputBlob = this.imagesBlobContainer.GetBlockBlobReference(thumbnailName);

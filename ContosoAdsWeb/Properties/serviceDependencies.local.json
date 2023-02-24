@@ -8,6 +8,12 @@
       "type": "mssql.local",
       "connectionId": "DBConnectionString",
       "dynamicId": null
+    },
+    "storage1": {
+      "secretStore": "LocalSecretsFile",
+      "type": "storage.emulator",
+      "connectionId": "StorageConnectionString",
+      "dynamicId": null
     }
   }
 }
